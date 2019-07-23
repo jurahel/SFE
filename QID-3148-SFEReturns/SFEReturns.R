@@ -19,16 +19,10 @@ stocks = as.matrix(c("all", "allianz", "basf", "bayer", "bmw", "cobank", "daimle
     "deutsche bank", "degussa", "dresdner bank", "hoechst", "karstadt", "linde", 
     "man", "mannesmann", "preussag", "rwe", "schering", "siemens", "thyssen", 
     "volkswagen"))
-s = menu(stocks, graphics = TRUE, title = "Select one")
-n = nrow(datax)
-x = (datax[, s])
-st = stocks[s]
 
-# select all companies, if the first menu entry was selected
-if (s == 1) {
-    x = (datax[, 2:ncol(datax)])
-    st = c(stocks[2:21])
-}
+n = nrow(datax)
+x = (datax[, 2:ncol(datax)])
+st = c(stocks[2:21])
 
 x = as.matrix(x)
 result = matrix(1, ncol = 7, nrow = ncol(x), dimnames = list(st, c("rho(ret):", 
